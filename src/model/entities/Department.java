@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Department {
+	
 	private String name;
 	private int payDay;
-	private List<Employee> employees = new ArrayList<>(); 
+	private Address address;
+	
+	private List<Employee> employees = new ArrayList<>();
 	
 	public Department(String name, int payDay) {
 		this.name = name;
@@ -27,6 +30,18 @@ public class Department {
 
 	public void setPayDay(int payDay) {
 		this.payDay = payDay;
+	}
+	
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	public List<Employee> getEmployees() {
+		return employees;
 	}
 	
 	public void addEmployee(Employee employee) {
