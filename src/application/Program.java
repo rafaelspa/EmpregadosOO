@@ -1,3 +1,13 @@
+/* Module 4 - Chapter 11 - EmployeeOO Challenge - Escola Devsuperior
+ * Prof. Nelio Alves
+ * 
+ * Student: rsdepaula67@gmail.com
+ * 
+ * Description:
+ * Program to exercise and evaluate composition of classes in UML style
+ * using department, employee and address classes.
+ */
+
 package application;
 
 import java.util.Scanner;
@@ -11,6 +21,7 @@ public class Program {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
+		// Department data
 		System.out.print("Nome do departamento: ");
 		String nameDepartment = sc.nextLine();
 		System.out.print("Dia do pagamento: ");
@@ -19,6 +30,8 @@ public class Program {
 		Department department = new Department(nameDepartment, payDay);
 		
 		sc.nextLine();
+		
+		// Address data
 		System.out.print("Email: ");
 		String addressEmail = sc.nextLine();
 		System.out.print("Telefone: ");
@@ -26,8 +39,9 @@ public class Program {
 		
 		department.setAddress(new Address(addressEmail, addressPhone));
 		
-		System.out.print("Quantos funcionários tem o departamento? ");
 		
+		// Employees' listing
+		System.out.print("Quantos funcionários tem o departamento? ");
 		
 		int nEmployees = sc.nextInt();
 		for (int i = 0; i < nEmployees; i++) {
@@ -42,6 +56,7 @@ public class Program {
 		
 		System.out.println();
 		
+		// Report decoupled from main.
 		showReport(department);
 		
 		sc.close();
